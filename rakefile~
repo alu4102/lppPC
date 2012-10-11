@@ -1,12 +1,12 @@
 task :default => :perimetro
 
 desc "Run perimetro.rb with ruby"
-task :perimetro do
+task :programa do
   sh "ruby perimetro.rb"
 end
 
 desc "Run tc_perimetro.rb with ruby"
-task :tc_perimetro do
+task :test_p do
   sh "ruby tc_perimetro.rb"
 end
 

@@ -15,22 +15,19 @@ class Perimetro
   end
 
   def calculo ( p )
-
-	if p.class == String
-		raise "Error el parametro no es valido"
-	end
-
+    if ((p != Numeric) || (p < 0))
+       raise RuntimeError, 'Argumento no valido'
 	else
-  		if p > 0.0
-    		@pi = @pi*2	 
-    		p/@pi
-		end
-		else
-			raise "Error parametro negativo"
-		end
-	end
+	   @pi = @pi*2	 
+       p/@pi
+    end
   end
-	
+end
+
+if ARGV.size == 1 
+    puts ARGV
+	raise ArgumentError, 'Argumento no valido' unless @arg.is_a? Numeric
+    raise ArgumentError, 'Argumento no valido' unless (@arg > 0)
 end
 
 

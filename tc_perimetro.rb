@@ -9,12 +9,12 @@ class TestPerimetro < Test::Unit::TestCase
     assert_in_delta(2.0, Perimetro.new(0).calculo(12.56), 0)
   end
 
-  def test_typecheck
-    assert_nothing_raised( RuntimeError ) { Perimetro.new(0).calculo('a') }
+  def test_negativo
+    assert_raise( RuntimeError ) { Perimetro.new(0).calculo(-1) }
   end
 
-  def test_negativo
-    assert_nothing_raised( RuntimeError ) {Perimetro.new(0).calculo(-12.56)}		
+  def test_typecheck
+    assert_raise( RuntimeError ) { Perimetro.new(0).calculo('a') }
   end
- 
+
 end
